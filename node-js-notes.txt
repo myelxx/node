@@ -1,0 +1,81 @@
+install package
+-> require on server.js file
+
+model folder -> more on schema and database require
+server js -> lahatan gamit
+views -> front-end (ejs)
+public -> static 
+routes -> mas secure and malinis na pagpasa ng mga files and connection
+secret -> important keys can't see in public
+
+User.findOne : query siya ng mongoose; only one but when find lang return array
+
+nodemon
+-------------------
+npm i nodemon
+"dev": nodemon server.js ---package.json changes
+npm run dev : run nodemon
+
+passport (middle ware)
+------------------
+login, signup authentications
+npm i passport --save
+passport should add after session in server.js file : conflict :
+app.use(passport.initializze());
+app.uses(passport.session());
+
+
+flash
+-----------------
+display messages or errors
+
+npm i connect-flash --save
+
+add after session in server.js file : conflict
+
+passport local
+------------------
+npm i passport-local
+
+function:
+seriealizeUser -> save id in the session
+deseriealizeUser  -> retrieve user data
+findById -> mongoose function
+
+bodyParser (middle ware)
+------------------
+get the value of the form, body
+req.body -> get data from page; pass data; name ng form is important sa ejs 
+
+bcrypt-nodejs
+------------------
+encrypt password => (arrow function) -- 
+hashSync -> 
+genSaltSync -> (length, null)
+
+routes---- app.post -> form submit; app.get -> render page only
+successRedirect
+failureRedirect:'/gsgds'
+failureFlash:true
+
+forgot password
+------------------
+npm i nodemailer --save : allows send email
+npm i nodemailer-smtp-tranport --sae : allows create nodemailer protocol; send email in node server
+npm i async : library pattern synchronous js code
+
+require on routes/user.js
+async use in post method : 
+async.waterfall([]) -> para after one function punta sa next
+crypto - generate random values (need to require but no need to install)
+nodemailer.createTransport({}) -> service: auth{user: pass:}
+mailOption -> to: from: subject: text:
+
+------------------
+------------------
+------------------
+------------------
+------------------
+------------------
+------------------
+------------------
